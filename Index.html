@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Website</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('images/hero.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #search-form input {
+      padding: 0.5rem;
+      width: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #search-form button {
+      padding: 0.5rem 1rem;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Property Listings */
+    .listings {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .property-card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .property-card h3 {
+      margin: 1rem;
+    }
+
+    .property-card p {
+      margin: 0 1rem 1rem;
+    }
+
+    /* Lead Generation Form */
+    .lead-form {
+      padding: 2rem;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    #signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    #signup-form input {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #signup-form button {
+      padding: 0.5rem 1rem;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Social Media Integration */
+    .social-media {
+      padding: 2rem;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* WhatsApp Chat */
+    .whatsapp-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-chat img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Ad Container */
+    .ad-container {
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">YourCityHomes</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Find Your Dream Home</h1>
+      <form id="search-form">
+        <input type="text" placeholder="Enter city or ZIP code" required>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Property Listings -->
+  <section id="listings" class="listings">
+    <h2>Featured Properties</h2>
+    <div id="property-list" class="property-grid">
+      <!-- Properties will be dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Lead Generation Form -->
+  <section id="lead-form" class="lead-form">
+    <h2>Get the Latest Property Updates</h2>
+    <form id="signup-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Your Phone Number" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <!-- Social Media Integration -->
+  <section id="social-media" class="social-media">
+    <h2>Follow Us on Social Media</h2>
+    <div class="social-links">
+      <a href="https://instagram.com/youraccount" target="_blank">Instagram</a>
+      <a href="https://facebook.com/youraccount" target="_blank">Facebook</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 YourCityHomes. All rights reserved.</p>
+  </footer>
+
+  <!-- WhatsApp Chat -->
+  <a href="https://wa.me/yourphonenumber" target="_blank" class="whatsapp-chat">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp Chat">
+  </a>
+
+  <!-- AdSense Ad -->
+  <div class="ad-container">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4426465557846826"
+      crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-4426465557846826"
+      data-ad-slot="986-434-7302"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <script>
+    // Sample JSON data (can be fetched from an API or backend)
+    const properties = [
+      {
+        id: 1,
+        image: "images/property1.jpg",
+        title: "Luxury Apartment in Downtown",
+        description: "3 Beds, 2 Baths, 1500 sqft",
+        price: "$500,000",
+      },
+      {
+        id: 2,
+        image: "images/property2.jpg",
+        title: "Modern Family Home",
+        description: "4 Beds, 3 Baths, 2000 sqft",
+        price: "$700,000",
+      },
+      {
+        id: 3,
+        image: "images/property3.jpg",
+        title: "Cozy Suburban House",
+        description: "2 Beds, 1 Bath, 1200 sqft",
+        price: "$300,000",
+      },
+    ];
+
+    // Function to display properties
+    function displayProperties() {
+      const propertyList = document.getElementById("property-list");
+      propertyList.innerHTML = properties
+        .map(
+          (property) => `
+          <div class="property-card">
+            <img src="${property.image}" alt="${property.title}">
+            <h3>${property.title}</h3>
+            <p>${property.description}</p>
+            <p><strong>${property.price}</strong></p>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    // Lead Generation Form Submission
+    document.getElementById("signup-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.querySelector("#signup-form input[type='text']").value;
+      const email = document.querySelector("#signup-form input[type='email']").value;
+      const phone = document.querySelector("#signup-form input[type='tel']").value;
+
+      // Save or send this data to your backend/CRM
+      console.log("Lead Captured:", { name, email, phone });
+      alert("Thank you for signing up! We'll contact you soon.");
+    });
+
+    // Load properties on page load
+    window.onload = displayProperties;
+  </script>
+
+  <!-- Google Ads Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "YOUR_GA_ID");
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "YOUR_FB_PIXEL_ID");
+    fbq("track", "PageView");
+  </script>
+
+  <!-- Local SEO Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "YourCityHomes",
+    "image": "https://yourwebsite.com/logo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main St",
+      "addressLocality": "Your City",
+      "addressRegion": "Your State",
+      "postalCode": "12345",
+      "addressCountry": "USA"
+    },
+    "telephone": "+9197011 30456",
+    "url": "https://yourwebsite.com"
+  }
+  </script>
+</body>
+</html>
